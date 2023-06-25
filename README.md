@@ -11,11 +11,11 @@ Status
 ------
 Version: 1.22
 
-ImGui version: 1.74
+ImGui version: 1.89.6 docking
 
-Supported engine version: 4.26*
+Supported engine version: 5.2.1
 
-\* *Plugin has been tested and if necessary updated to compile and work with this engine version. As long as possible I will try to maintain backward compatibility of existing features and possibly but not necessarily when adding new features. When it comes to bare-bone ImGui version it should be at least backward compatible with the engine version 4.15. For NetImgui it needs to be determined.*
+\* *May not be compatible with older versions.*
 
 Current work
 ------------
