@@ -24,6 +24,7 @@
 
 #include <utility>
 
+#include "Slate/SceneViewport.h"
 
 #if IMGUI_WIDGET_DEBUG
 
@@ -146,6 +147,8 @@ void SImGuiWidget::Tick(const FGeometry& AllottedGeometry, const double InCurren
 {
 	Super::Tick(AllottedGeometry, InCurrentTime, InDeltaTime);
 
+	ModuleManager->GetProperties().SetInputEnabled(!GameViewport.Get()->GetGameViewport()->HasMouseCapture());
+	
 	UpdateInputState();
 	UpdateTransparentMouseInput(AllottedGeometry);
 	HandleWindowFocusLost();
@@ -986,8 +989,8 @@ void SImGuiWidget::OnDebugDraw()
 
 			Columns::CollapsingGroup("Mouse Axes", 4, [&]()
 			{
-				TwoColumns::Value("Position X", InputState.GetMousePosition().X);
-				TwoColumns::Value("Position Y", InputState.GetMousePosition().Y);
+				TwoColumns::Value("Position X", static_cast<uint32>(InputState.GetMousePosition().X));
+				TwoColumns::Value("Position Y", static_cast<uint32>(InputState.GetMousePosition().Y));
 				TwoColumns::Value("Wheel Delta", InputState.GetMouseWheelDelta());
 				ImGui::NextColumn(); ImGui::NextColumn();
 			});

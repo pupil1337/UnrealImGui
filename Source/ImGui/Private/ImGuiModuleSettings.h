@@ -194,7 +194,7 @@ protected:
 	// This defines initial behaviour which can be later changed using 'ImGui.ToggleMouseInputSharing' command or
 	// module properties interface.
 	UPROPERTY(EditAnywhere, config, Category = "Input")
-	bool bShareMouseInput = false;
+	bool bShareMouseInput = true;
 
 	// If true, then in input mode ImGui will draw its own cursor in place of the hardware one.
 	// When disabled (default) there is a noticeable difference between cursor position seen by ImGui and position on
